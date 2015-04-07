@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Tableau Periodique</title>
+    <style>
+table {
+  border-collapse: collapse;
+  border-spacing: 0px;
+  width: 97%;
+}
+
+.cell {
+  width: 5%;
+  height: 100px;
+  /*padding-top: 20px;
+  padding-bottom: 20px;*/
+  border: 1px solid;
+  margin: 0px;
+  transition: all .2s ease-in;
+  overflow: hidden;
+  background-color: #FAAF67;
+}
+.blank_row {
+  height: 30px;
+}
+
+.cell:hover {
+  transform:scale(2);
+  position: relative;
+  z-index:100;
+  box-shadow: 0 0 10px rgba(0,0,0,.5);
+}
+
+.elemnum {
+  z-index: 0;
+  position: absolute;
+  bottom: 0px;
+}
+
+.elemname {
+  z-index: 0;
+  padding-top: 35%;
+  vertical-align: middle;
+  font-weight: bold;
+  font-size: 2em;
+  text-align: center;
+}
+
+.elemweight {
+  z-index: 0;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+
+.container {
+  position: relative;
+  height: 100%;
+}
+
+.cell.type-gaz {
+  background-color: #2F343B;
+}
+
+.cell.type-alcalins {
+  background-color: #703030;
+}
+
+.cell.type-terreux {
+  background-color: #C77966;
+}
+
+.cell.type-halogenes {
+  background-color: #E3CDA4;
+}
+
+.cell.type-metalloids {
+  background-color: #644D52;
+}
+
+.cell.type-poormetals {
+  background-color: #A49A87;
+}
+.cell.type-nonmetals {
+  background-color: #BF8BBB;
+}
+    </style>
+  </head>
+  <body>
+    <table>
+      <tbody>
+        <tr>
+          <td class="cell type-nonmetals">
+            <div class="container">
+              <div class="elemnum">1</div>
+              <div class="elemname">H</div>
+              <div class="elemweight">1.008</div>
+            </div>
+          </td>
+          </div>
+          <td colspan=16></td>
+          <td class="cell type-gaz">
+            <div class="container">
+              <div class="elemnum">2</div>
+              <div class="elemname">He</div>
+              <div class="elemweight">4.0026</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="cell type-alcalins">
+            <div class="container">
+              <div class="elemnum">3</div>
+              <div class="elemname">Li</div>
+              <div class="elemweight">6.94</div>
+            </div>
+          </td>
+          <td class="cell type-terreux">
+            <div class="container">
+              <div class="elemnum">4</div>
+              <div class="elemname">Be</div>
+              <div class="elemweight">9.0122</div>
+            </div>
+          </td>
+          </div>
+          <td colspan=10></td>
+          <td class="cell type-metalloids">
+            <div class="container">
+              <div class="elemnum">5</div>
+              <div class="elemname">B</div>
+              <div class="elemweight">10.81</div>
+            </div>
+          </td>
+          <td class="cell type-nonmetals">
+            <div class="container">
+              <div class="elemnum">6</div>
+              <div class="elemname">C</div>
+              <div class="elemweight">12.011</div>
+            </div>
+          </td>
+          <td class="cell type-nonmetals">
+            <div class="container">
+              <div class="elemnum">7</div>
+              <div class="elemname">N</div>
+              <div class="elemweight">14.007</div>
+            </div>
+          </td>
+          <td class="cell type-nonmetals">
+            <div class="container">
+              <div class="elemnum">8</div>
+              <div class="elemname">O</div>
+              <div class="elemweight">15.999</div>
+            </div>
+          </td>
+          <td class="cell type-halogenes">
+            <div class="container">
+              <div class="elemnum">9</div>
+              <div class="elemname">F</div>
+              <div class="elemweight">18.998</div>
+            </div>
+          </td>
+          <td class="cell type-gaz">
+            <div class="container">
+              <div class="elemnum">10</div>
+              <div class="elemname">Ne</div>
+              <div class="elemweight">20.180</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="cell type-alcalins">
+            <div class="container">
+              <div class="elemnum">11</div>
+              <div class="elemname">Na</div>
+              <div class="elemweight">22.990</div>
+            </div>
+          </td>
+          <td class="cell type-terreux">
+            <div class="container">
+              <div class="elemnum">12</div>
+              <div class="elemname">Mg</div>
+              <div class="elemweight">24.305</div>
+            </div>
+          </td>
+          </div>
+          <td colspan=10></td>
+          <td class="cell type-poormetals">
+            <div class="container">
+              <div class="elemnum">13</div>
+              <div class="elemname">Al</div>
+              <div class="elemweight">26.982</div>
+            </div>
+          </td>
+          <td class="cell type-metalloids">
+            <div class="container">
+              <div class="elemnum">14</div>
+              <div class="elemname">Si</div>
+              <div class="elemweight">28.085</div>
+            </div>
+          </td>
+          <td class="cell type-nonmetals">
+            <div class="container">
+              <div class="elemnum">15</div>
+              <div class="elemname">P</div>
+              <div class="elemweight">30.974</div>
+            </div>
+          </td>
+          <td class="cell type-nonmetals">
+            <div class="container">
+              <div class="elemnum">16</div>
+              <div class="elemname">S</div>
+              <div class="elemweight">32.06</div>
+            </div>
+          </td>
+          <td class="cell type-halogenes">
+            <div class="container">
+              <div class="elemnum">17</div>
+              <div class="elemname">Cl</div>
+              <div class="elemweight">35.45</div>
+            </div>
+          </td>
+          <td class="cell type-gaz">
+            <div class="container">
+              <div class="elemnum">18</div>
+              <div class="elemname">Ar</div>
+              <div class="elemweight">39.948</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="cell type-alcalins">
+            <div class="container">
+              <div class="elemnum">19</div>
+              <div class="elemname">K</div>
+              <div class="elemweight">39.098</div>
+            </div>
+          </td>
+          <td class="cell type-terreux">
+            <div class="container">
+              <div class="elemnum">20</div>
+              <div class="elemname">Ca</div>
+              <div class="elemweight">40.079</div>
+            </div>
+          </td>
+          <td class="cell">
+            <div class="container">
+              <div class="elemnum">21</div>
+              <div class="elemname">Sc</div>
+              <div class="elemweight">44.956</div>
+            </div>
+          </td>
+          <td class="cell">
+            <div class="container">
+              <div class="elemnum">22</div>
+              <div class="elemname">Ti</div>
+              <div class="elemweight">47.869</div>
+            </div>
+          </td>
+          <td class="cell">
+            <div class="container">
+              <div class="elemnum">23</div>
+              <div class="elemname">V</div>
+              <div class="elemweight">50.942</div>
+            </div>
+          </td>
+          <td class="cell">
+            <div class="container">
+              <div class="elemnum">24</div>
+              <div class="elemname">Cr</div>
+              <div class="elemweight">51.996</div>
+            </div>
+          </td>
+          <td class="cell">
+            <div class="container">
+              <div class="elemnum">25</div>
+              <div class="elemname">Mn</div>
+              <div class="elemweight">54.938</div>
+            </div>
+          </td>
+          <td class="cell">
+            <div class="container">
+              <div class="elemnum">26</div>
+              <div class="elemname">Fe</div>
+              <div class="elemweight">55.845</div>
+            </div>
+          </td>
+          <td class="cell">
+            <div class="container">
+              <div class="elemnum">27</div>
+              <div class="elemname">Co</div>
+              <div class="elemweight">58.933</div>
+            </div>
+          </td>
+          <td class="cell">
+            <div class="container">
+              <div class="elemnum">28</div>
+              <div class="elemname">Ni</div>
+              <div class="elemweight">58.693</div>
+            </div>
+          </td>
+          <td class="cell">
+            <div class="container">
+              <div class="elemnum">29</div>
+              <div class="elemname">Cu</div>
+              <div class="elemweight">63.546</div>
+            </div>
+          </td>
+          <td class="cell">
+            <div class="container">
+              <div class="elemnum">30</div>
+              <div class="elemname">Zn</div>
+              <div class="elemweight">65.38</div>
+            </div>
+          </td>
+          <td class="cell type-poormetals">
+            <div class="container">
+              <div class="elemnum">31</div>
+              <div class="elemname">Ga</div>
+              <div class="elemweight">69.723</div>
+            </div>
+          </td>
+          <td class="cell type-metalloids">
+            <div class="container">
+              <div class="elemnum">32</div>
+              <div class="elemname">Ge</div>
+              <div class="elemweight">72.63</div>
+            </div>
+          </td>
+          <td class="cell type-metalloids">
+            <div class="container">
+              <div class="elemnum">33</div>
+              <div class="elemname">As</div>
+              <div class="elemweight">74.922</div>
+            </div>
+          </td>
+          <td class="cell type-nonmetals">
+            <div class="container">
+              <div class="elemnum">34</div>
+              <div class="elemname">Se</div>
+              <div class="elemweight">78.96</div>
+            </div>
+          </td>
+          <td class="cell type-halogenes">
+            <div class="container">
+              <div class="elemnum">35</div>
+              <div class="elemname">Br</div>
+              <div class="elemweight">79.904</div>
+            </div>
+          </td>
+          <td class="cell type-gaz">
+            <div class="container">
+              <div class="elemnum">36</div>
+              <div class="elemname">Kr</div>
+              <div class="elemweight">83.798</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="cell type-alcalins">
+            <div class="container">
+              <div class="elemnum">37</div>
+              <div class="elemname">Rb</div>
+              <div class="elemweight">85.468</div>
+            </div>
+          </td>
+          <td class="cell type-terreux">
+            <div class="container">
+              <div class="elemnum">38</div>
+              <div class="elemname">Sr</div>
+              <div class="elemweight">87.62</div>
+            </div>
+          </td>
+          <td class="cell">
+            <div class="container">
+              <div class="elemnum">39</div>
+              <div class="elemname">Y</div>
+              <div class="elemweight">88.906</div>
+            </div>
+          </td>
+          <td class="cell">
+            <div class="container">
+              <div class="elemnum">40</div>
+              <div class="elemname">Zr</div>
+              <div class="elemweight">91.224</div>
+            </div>
+          </td>
+          <td class="cell">
+            <div class="container">
+              <div class="elemnum">41</div>
+              <div class="elemname">Nb</div>
+              <div class="elemweight">92.906</div>
+            </div>
+          </td>
+          <td class="cell">
+            <div class="container">
+              <div class="elemnum">42</div>
+              <div class="elemname">Mo</div>
+              <div class="elemweight">95.96</div>
+            </div>
+          </td>
+          <td class="cell">
+            <div class="container">
+              <div class="elemnum">43</div>
+              <div class="elemname">Tc</div>
+              <div class="elemweight">97.91</div>
+            </div>
+          </td>
+          <td class="cell">
+            <div class="container">
+              <div class="elemnum">44</div>
+              <div class="elemname">Ru</div>
+              <div class="elemweight">101.07</div>
+            </div>
+          </td>
+          <td class="cell">
+            <div class="container">
+              <div class="elemnum">45</div>
+              <div class="elemname">Rh</div>
+              <div class="elemweight">102.91</div>
+            </div>
+          </td>
+          <td class="cell">
+            <div class="container">
+              <div class="elemnum">46</div>
+              <div class="elemname">Pd</div>
+              <div class="elemweight">106.42</div>
+            </div>
+          </td>
+          <td class="cell">
+            <div class="container">
+              <div class="elemnum">47</div>
+              <div class="elemname">Ag</div>
+              <div class="elemweight">107.87</div>
+            </div>
+          </td>
+          <td class="cell">
+            <div class="container">
+              <div class="elemnum">48</div>
+              <div class="elemname">Cd</div>
+              <div class="elemweight">112.41</div>
+            </div>
+          </td>
+          <td class="cell type-poormetals">
+            <div class="container">
+              <div class="elemnum">49</div>
+              <div class="elemname">In</div>
+              <div class="elemweight">114.82</div>
+            </div>
+          </td>
+          <td class="cell type-poormetals">
+            <div class="container">
+              <div class="elemnum">50</div>
+              <div class="elemname">Sn</div>
+              <div class="elemweight">118.71</div>
+            </div>
+          </td>
+          <td class="cell type-metalloids">
+            <div class="container">
+              <div class="elemnum">51</div>
+              <div class="elemname">Sb</div>
+              <div class="elemweight">121.76</div>
+            </div>
+          </td>
+          <td class="cell type-metalloids">
+            <div class="container">
+              <div class="elemnum">52</div>
+              <div class="elemname">Te</div>
+              <div class="elemweight">127.60</div>
+            </div>
+          </td>
+          <td class="cell type-halogenes">
+            <div class="container">
+              <div class="elemnum">53</div>
+              <div class="elemname">I</div>
+              <div class="elemweight">126.90</div>
+            </div>
+          </td>
+          <td class="cell type-gaz">
+            <div class="container">
+              <div class="elemnum">54</div>
+              <div class="elemname">Xe</div>
+              <div class="elemweight">131.29</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="cell type-alcalins">
+            <div class="container">
+              <div class="elemnum">55</div>
+              <div class="elemname">Cs</div>
+              <div class="elemweight">132.91</div>
+            </div>
+          </td>
+          <td class="cell type-terreux">
+            <div class="container">
+              <div class="elemnum">56</div>
+              <div class="elemname">Ba</div>
+              <div class="elemweight">137.33</div>
+            </div>
+          </td>
+          <td class="cell">
+            <div class="container">
+              <div class="elemname">*</div>
+            </div>
+          </td>
+          <td class="cell">
+            <div class="container">
+              <div class="elemnum">72</div>
+              <div class="elemname">Hf</div>
+              <div class="elemweight">178.49</div>
+            </div>
+          </td>
+          <td class="cell">
+            <div class="container">
+              <div class="elemnum">73</div>
+              <div class="elemname">Ta</div>
+              <div class="elemweight">180.95</div>
+            </div>
+          </td>
+          <td class="cell">
+            <div class="container">
+              <div class="elemnum">74</div>
+              <div class="elemname">W</div>
+              <div class="elemweight">183.84</div>
+            </div>
+          </td>
+          <td class="cell">
+            <div class="container">
+              <div class="elemnum">75</div>
+              <div class="elemname">Re</div>
+              <div class="elemweight">186.21</div>
+            </div>
+          </td>
+          <td class="cell">
+            <div class="container">
+              <div class="elemnum">76</div>
+              <div class="elemname">Os</div>
+              <div class="elemweight">190.23</div>
+            </div>
+          </td>
+          <td class="cell">
+            <div class="container">
+              <div class="elemnum">77</div>
+              <div class="elemname">Ir</div>
+              <div class="elemweight">192.22</div>
+            </div>
+          </td>
+          <td class="cell">
+            <div class="container">
+              <div class="elemnum">78</div>
+              <div class="elemname">Pt</div>
+              <div class="elemweight">195.08</div>
+            </div>
+          </td>
+          <td class="cell">
+            <div class="container">
+              <div class="elemnum">79</div>
+              <div class="elemname">Au</div>
+              <div class="elemweight">196.97</div>
+            </div>
+          </td>
+          <td class="cell">
+            <div class="container">
+              <div class="elemnum">80</div>
+              <div class="elemname">Hg</div>
+              <div class="elemweight">200.59</div>
+            </div>
+          </td>
+          <td class="cell type-poormetals">
+            <div class="container">
+              <div class="elemnum">81</div>
+              <div class="elemname">Tl</div>
+              <div class="elemweight">204.38</div>
+            </div>
+          </td>
+          <td class="cell type-poormetals">
+            <div class="container">
+              <div class="elemnum">82</div>
+              <div class="elemname">Pb</div>
+              <div class="elemweight">207.2</div>
+            </div>
+          </td>
+          <td class="cell type-poormetals">
+            <div class="container">
+              <div class="elemnum">83</div>
+              <div class="elemname">Bi</div>
+              <div class="elemweight">208.98</div>
+            </div>
+          </td>
+          <td class="cell type-metalloids">
+            <div class="container">
+              <div class="elemnum">84</div>
+              <div class="elemname">Po</div>
+              <div class="elemweight">208.98</div>
+            </div>
+          </td>
+          <td class="cell type-halogenes">
+            <div class="container">
+              <div class="elemnum">85</div>
+              <div class="elemname">At</div>
+              <div class="elemweight">209.99</div>
+            </div>
+          </td>
+          <td class="cell type-gaz">
+            <div class="container">
+              <div class="elemnum">86</div>
+              <div class="elemname">Rn</div>
+              <div class="elemweight">222.02</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="cell type-alcalins">
+            <div class="container">
+              <div class="elemnum">87</div>
+              <div class="elemname">Fr</div>
+              <div class="elemweight">223.02</div>
+            </div>
+          </td>
+          <td class="cell type-terreux">
+            <div class="container">
+              <div class="elemnum">88</div>
+              <div class="elemname">Ra</div>
+              <div class="elemweight">226.03</div>
+            </div>
+          </td>
+          <td class="cell">
+            <div class="container">
+              <div class="elemname">**</div>
+            </div>
+          </td>
+          <td class="cell">
+            <div class="container">
+              <div class="elemnum">104</div>
+              <div class="elemname">Rf</div>
+              <div class="elemweight">265.12</div>
+            </div>
+          </td>
+          <td class="cell">
+            <div class="container">
+              <div class="elemnum">105</div>
+              <div class="elemname">Db</div>
+              <div class="elemweight">268.13</div>
+            </div>
+          </td>
+          <td class="cell">
+            <div class="container">
+              <div class="elemnum">106</div>
+              <div class="elemname">Sg</div>
+              <div class="elemweight">271.13</div>
+            </div>
+          </td>
+          <td class="cell">
+            <div class="container">
+              <div class="elemnum">107</div>
+              <div class="elemname">Bh</div>
+              <div class="elemweight">270</div>
+            </div>
+          </td>
+          <td class="cell">
+            <div class="container">
+              <div class="elemnum">108</div>
+              <div class="elemname">Hs</div>
+              <div class="elemweight">277.15</div>
+            </div>
+          </td>
+          <td class="cell">
+            <div class="container">
+              <div class="elemnum">109</div>
+              <div class="elemname">Mt</div>
+              <div class="elemweight">276.15</div>
+            </div>
+          </td>
+          <td class="cell">
+            <div class="container">
+              <div class="elemnum">110</div>
+              <div class="elemname">Ds</div>
+              <div class="elemweight">281.16</div>
+            </div>
+          </td>
+          <td class="cell">
+            <div class="container">
+              <div class="elemnum">111</div>
+              <div class="elemname">Rg</div>
+              <div class="elemweight">280.16</div>
+            </div>
+          </td>
+          <td class="cell">
+            <div class="container">
+              <div class="elemnum">112</div>
+              <div class="elemname">Cn</div>
+              <div class="elemweight">285.17</div>
+            </div>
+          </td>
+          <td class="cell type-poormetals">
+            <div class="container">
+              <div class="elemnum">113</div>
+              <div class="elemname">Uut</div>
+              <div class="elemweight">284.18</div>
+            </div>
+          </td>
+          <td class="cell type-poormetals">
+            <div class="container">
+              <div class="elemnum">114</div>
+              <div class="elemname">Fl</div>
+              <div class="elemweight">289.19</div>
+            </div>
+          </td>
+          <td class="cell type-poormetals">
+            <div class="container">
+              <div class="elemnum">115</div>
+              <div class="elemname">Uup</div>
+              <div class="elemweight">288.19</div>
+            </div>
+          </td>
+          <td class="cell type-poormetals">
+            <div class="container">
+              <div class="elemnum">116</div>
+              <div class="elemname">Lv</div>
+              <div class="elemweight">293</div>
+            </div>
+          </td>
+          <td class="cell type-halogenes">
+            <div class="container">
+              <div class="elemnum">117</div>
+              <div class="elemname">Uus</div>
+              <div class="elemweight">294</div>
+            </div>
+          </td>
+          <td class="cell type-gaz">
+            <div class="container">
+              <div class="elemnum">118</div>
+              <div class="elemname">Uuo</div>
+              <div class="elemweight">294</div>
+            </div>
+          </td>
+        </tr>
+        <tr class ="blank_row">
+          </div>
+          <td colspan="18"></td>
+        </tr>
+        <tr>
+          </div>
+          <td colspan=3></td>
+          <td class="cell">
+            <div class="container">
+              <div class="elemnum">57</div>
+              <div class="elemname">La</div>
+              <div class="elemweight">138.9054</div>
+            </div>
+          </td>
+          <td class="cell">
+            <div class="container">
+              <div class="elemnum">58</div>
+              <div class="elemname">Ce</div>
+              <div class="elemweight">140.116</div>
+            </div>
+          </td>
+          <td class="cell">
+            <div class="container">
+              <div class="elemnum">59</div>
+              <div class="elemname">Pr</div>
+              <div class="elemweight">140.9076</div>
+            </div>
+          </td>
+          <td class="cell">
+            <div class="container">
+              <div class="elemnum">60</div>
+              <div class="elemname">Nd</div>
+              <div class="elemweight">144.242</div>
+            </div>
+          </td>
+          <td class="cell">
+            <div class="container">
+              <div class="elemnum">61</div>
+              <div class="elemname">Pm</div>
+              <div class="elemweight">145</div>
+            </div>
+          </td>
+          <td class="cell">
+            <div class="container">
+              <div class="elemnum">62</div>
+              <div class="elemname">Sm</div>
+              <div class="elemweight">150.36</div>
+            </div>
+          </td>
+          <td class="cell">
+            <div class="container">
+              <div class="elemnum">63</div>
+              <div class="elemname">Eu</div>
+              <div class="elemweight">151.964</div>
+            </div>
+          </td>
+          <td class="cell">
+            <div class="container">
+              <div class="elemnum">64</div>
+              <div class="elemname">Gd</div>
+              <div class="elemweight">157.25</div>
+            </div>
+          </td>
+          <td class="cell">
+            <div class="container">
+              <div class="elemnum">65</div>
+              <div class="elemname">Tb</div>
+              <div class="elemweight">158.9253</div>
+            </div>
+          </td>
+          <td class="cell">
+            <div class="container">
+              <div class="elemnum">66</div>
+              <div class="elemname">Dy</div>
+              <div class="elemweight">162.9253</div>
+            </div>
+          </td>
+          <td class="cell">
+            <div class="container">
+              <div class="elemnum">67</div>
+              <div class="elemname">Ho</div>
+              <div class="elemweight">164.9303</div>
+            </div>
+          </td>
+          <td class="cell">
+            <div class="container">
+              <div class="elemnum">68</div>
+              <div class="elemname">Er</div>
+              <div class="elemweight">167.259</div>
+            </div>
+          </td>
+          <td class="cell">
+            <div class="container">
+              <div class="elemnum">69</div>
+              <div class="elemname">Tm</div>
+              <div class="elemweight">168.9342</div>
+            </div>
+          </td>
+          <td class="cell">
+            <div class="container">
+              <div class="elemnum">70</div>
+              <div class="elemname">Yb</div>
+              <div class="elemweight">173.054</div>
+            </div>
+          </td>
+          <td class="cell">
+            <div class="container">
+              <div class="elemnum">71</div>
+              <div class="elemname">Lu</div>
+              <div class="elemweight">173.054</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          </div>
+          <td colspan=3></td>
+          <td class="cell">
+            <div class="container">
+              <div class="elemnum">89</div>
+              <div class="elemname">Ac</div>
+              <div class="elemweight">227.0277</div>
+            </div>
+          </td>
+          <td class="cell">
+            <div class="container">
+              <div class="elemnum">90</div>
+              <div class="elemname">Th</div>
+              <div class="elemweight">232.03806</div>
+            </div>
+          </td>
+          <td class="cell">
+            <div class="container">
+              <div class="elemnum">91</div>
+              <div class="elemname">Pa</div>
+              <div class="elemweight">231.03588</div>
+            </div>
+          </td>
+          <td class="cell">
+            <div class="container">
+              <div class="elemnum">92</div>
+              <div class="elemname">U</div>
+              <div class="elemweight">238.02891</div>
+            </div>
+          </td>
+          <td class="cell">
+            <div class="container">
+              <div class="elemnum">93</div>
+              <div class="elemname">Np</div>
+              <div class="elemweight">237.0482</div>
+            </div>
+          </td>
+          <td class="cell">
+            <div class="container">
+              <div class="elemnum">94</div>
+              <div class="elemname">Pu</div>
+              <div class="elemweight">244.0642</div>
+            </div>
+          </td>
+          <td class="cell">
+            <div class="container">
+              <div class="elemnum">95</div>
+              <div class="elemname">Am</div>
+              <div class="elemweight">243.0614</div>
+            </div>
+          </td>
+          <td class="cell">
+            <div class="container">
+              <div class="elemnum">96</div>
+              <div class="elemname">Cm</div>
+              <div class="elemweight">247.0703</div>
+            </div>
+          </td>
+          <td class="cell">
+            <div class="container">
+              <div class="elemnum">97</div>
+              <div class="elemname">Bk</div>
+              <div class="elemweight">247.0703</div>
+            </div>
+          </td>
+          <td class="cell">
+            <div class="container">
+              <div class="elemnum">98</div>
+              <div class="elemname">Cf</div>
+              <div class="elemweight">251.0796</div>
+            </div>
+          </td>
+          <td class="cell">
+            <div class="container">
+              <div class="elemnum">99</div>
+              <div class="elemname">Es</div>
+              <div class="elemweight">252.0830</div>
+            </div>
+          </td>
+          <td class="cell">
+            <div class="container">
+              <div class="elemnum">100</div>
+              <div class="elemname">Fm</div>
+              <div class="elemweight">257.0951</div>
+            </div>
+          </td>
+          <td class="cell">
+            <div class="container">
+              <div class="elemnum">101</div>
+              <div class="elemname">Md</div>
+              <div class="elemweight">258.0984</div>
+            </div>
+          </td>
+          <td class="cell">
+            <div class="container">
+              <div class="elemnum">102</div>
+              <div class="elemname">No</div>
+              <div class="elemweight">289.1011</div>
+            </div>
+          </td>
+          <td class="cell">
+            <div class="container">
+              <div class="elemnum">103</div>
+              <div class="elemname">Lr</div>
+              <div class="elemweight">262.110</div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
